@@ -1,0 +1,31 @@
+{
+  "name": "project-lvl1-s160",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergey-B/project-lvl1-s160.git"
+  },
+  "author": "Sergey Belov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergey-B/project-lvl1-s160/issues"
+  },
+  "homepage": "https://github.com/Sergey-B/project-lvl1-s160#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  }
+}
