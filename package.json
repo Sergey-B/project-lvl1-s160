@@ -1,10 +1,11 @@
 {
   "name": "project-lvl1-s160",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
