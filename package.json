@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s160",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "",
   "main": "dist/index.js",
   "bin": {
@@ -27,5 +27,8 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }
