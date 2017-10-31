@@ -1,6 +1,4 @@
 import readlineSync from 'readline-sync';
-import even from './games/even';
-import calc from './games/calc';
 
 const welcome = () => {
   console.log('Welcome to the Brain Games!');
@@ -53,9 +51,6 @@ export const playGame = (rules, makeQuestion, checkAnswer) => {
 
   console.log(`Congratulations, ${name}!`);
 };
-
-export { even };
-export { calc };
 
 export default () => {
   welcome();
