@@ -13,8 +13,7 @@ const makeQuestion = () => {
   const num1 = randomNum(1, 100);
   const num2 = randomNum(1, 100);
 
-  return { question: `${num1} ${num2}`, answer: findGcd(num1, num2) };
+  return { question: `${num1} ${num2}`, answer: `${findGcd(num1, num2)}` };
 };
-const checkAnswer = (answer, solution) => parseInt(answer, 10) === parseInt(solution, 10);
 
-export default () => { playGame(rules, makeQuestion, checkAnswer); };
+export default () => { playGame(rules, makeQuestion); };

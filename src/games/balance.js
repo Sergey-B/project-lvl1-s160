@@ -19,8 +19,7 @@ const balanceNum = (num) => {
 const rules = 'Balance the given number.';
 const makeQuestion = () => {
   const num = randomNum(1, 5000);
-  return { question: `${num}`, answer: balanceNum(num) };
+  return { question: `${num}`, answer: `${balanceNum(num)}` };
 };
-const checkAnswer = (answer, solution) => parseInt(answer, 10) === parseInt(solution, 10);
 
-export default () => { playGame(rules, makeQuestion, checkAnswer); };
+export default () => { playGame(rules, makeQuestion); };

@@ -19,8 +19,7 @@ const makeQuestion = () => {
 
   progression[randomIndex] = '..';
 
-  return { question: progression.join(' '), answer };
+  return { question: progression.join(' '), answer: `${answer}` };
 };
-const checkAnswer = (answer, solution) => parseInt(answer, 10) === parseInt(solution, 10);
 
-export default () => { playGame(rules, makeQuestion, checkAnswer); };
+export default () => { playGame(rules, makeQuestion); };

@@ -4,7 +4,7 @@ const welcome = () => {
   console.log('Welcome to the Brain Games!');
 };
 
-const whatsYourName = () => {
+const getName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
@@ -25,21 +25,20 @@ const askQuestion = (question) => {
   return answer;
 };
 
-export const playGame = (rules, makeQuestion, checkAnswer) => {
+export const playGame = (rules, makeQuestion) => {
   welcome();
 
   console.log(rules);
   console.log('\n');
 
-  const name = whatsYourName();
+  const name = getName();
   console.log('\n');
 
   for (let i = 0; i < 3; i += 1) {
     const { question: expression, answer: solution } = makeQuestion();
     const answer = askQuestion(expression);
-    const result = checkAnswer(answer, solution);
 
-    if (result === true) {
+    if (answer === solution) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
@@ -55,5 +54,5 @@ export const playGame = (rules, makeQuestion, checkAnswer) => {
 export default () => {
   welcome();
   console.log('\n');
-  whatsYourName();
+  getName();
 };
