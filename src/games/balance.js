@@ -10,10 +10,16 @@ const balanceNum = (num) => {
   const indexMax = arrayInt.indexOf(Math.max(...arrayInt));
   const indexMin = arrayInt.indexOf(Math.min(...arrayInt));
 
-  arrayInt[indexMax] -= 1;
-  arrayInt[indexMin] += 1;
+  const mappedArr = arrayInt.map((n, idx) => {
+    if (idx === indexMax) {
+      return n - 1;
+    } else if (idx === indexMin) {
+      return n + 1;
+    }
+    return n;
+  });
 
-  return balanceNum(parseInt(arrayInt.join(''), 10));
+  return balanceNum(parseInt(mappedArr.join(''), 10));
 };
 
 const rules = 'Balance the given number.';

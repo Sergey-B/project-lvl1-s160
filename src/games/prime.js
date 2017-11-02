@@ -1,17 +1,15 @@
 import { playGame, randomNum } from '..';
 
-const isPrime = (num) => {
+const isPrime = (num, i = Math.floor(Math.sqrt(num))) => {
   if (num < 2) {
     return false;
   }
 
-  for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
+  if (i < 2) {
+    return true;
   }
 
-  return true;
+  return !(num % i === 0) && isPrime(num, i - 1);
 };
 
 const rules = 'Answer "yes" if number prime otherwise answer "no".';

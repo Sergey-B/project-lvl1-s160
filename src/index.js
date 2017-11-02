@@ -34,21 +34,26 @@ export const playGame = (rules, makeQuestion) => {
   const name = getName();
   console.log('\n');
 
-  for (let i = 0; i < 3; i += 1) {
-    const { question: expression, answer: solution } = makeQuestion();
+  const playRound = (i) => {
+    const { question: expression, answer: correctAnswer } = makeQuestion();
     const answer = askQuestion(expression);
 
-    if (answer === solution) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
+
+      if (i === 1) {
+        console.log(`Congratulations, ${name}!`);
+        return;
+      }
+
+      playRound(i - 1);
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-
-      return;
     }
-  }
+  };
 
-  console.log(`Congratulations, ${name}!`);
+  playRound(3);
 };
 
 export default () => {
